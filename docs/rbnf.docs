@@ -1,0 +1,30 @@
+<topRule> =    name <identifier>; body [<varsBlok> ];
+<varsBlok> =    "integer16_t" <identifier> [{<commaAndIdentifier>}];
+<identifier> =    _<up_letter> {<low_letter>} {6};
+<commaAndIdentifier> =    "," <identifier>;
+<codeBlok> =    body <write> | <read> | <assignment> | <ifStatement>  | <goto_statement> | < labelRule > | <forToOrDownToDoRule> | <while>  | <repeatUntil> end;
+<read> =    read ( <identifier> );
+<write> =    write ( <equation> | <stringRule>) ;
+<assignment> =    <identifier> <==    <equation>;
+<ifStatement> =    "if" ( <equation> ) <codeBlok> <elseStatement>
+<elseStatement> <== "else" <codeBlok>;
+<goto_statement> <==  "goto" <ident>;
+< forToOrDownToDoRule> =  "for" <assignment> "to" | "downto" <equation> "do" <codeBlok> ;
+<while> = while (<equation>) <codeBlok>;
+<repeatUntil> = "repeat" (<codeBlok>) "until" <equation>;
+<equation> =    <signedNumber> | <identifier> |  <notRule> [{ <operationAndIdentOrNumber> | <equation> }];
+< notRule > =    <notOperation> <signedNumber> | <identifier> | <equation>;
+<operationAndIdentOrNumber> =    <mult> | <arithmetic> | <logic> | <compare> <signedNumber> | <identifier> | <equation> ;
+<arithmetic> =    "add" | "sub;
+<mult> =    * | / | %;
+<logic> =    & | |;
+<notOperation> =   !;
+<compare> =    "eq" | != | "le" |"ge";
+<comment> = <LComment> { <low_letter> | <up_letter> | <number> } <RComment>;
+<LComment> =  "//";
+<RComment> =  "//";
+<signedNumber>  <== [<sign>] <digit>[{digit}]
+<sign> =  + | -  ;
+<low_letter> >> “a”| ”b” | ”c” | ”d” | “e” | ”f” | “g” | “h” | “i” | “j” | “k” | “l” | “n” | “m" | “o” | “p” | “q” | ”r”| “s”| “t” | “u” | “v” | “w” | “x” | “y” | “z”
+<up_letter>  >> “A” | “B” | “C” | “D” | “E” | “F” | “G” | “H” | “I” | “J” | “K” | “L” | “N” | “M" | “O” | “P” | “Q” | “R” | “S” | “T” | “U” | “V” | “W” | “X” | “Y” | “Z”
+<digit> >> "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
