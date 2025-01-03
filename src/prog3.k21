@@ -1,0 +1,44 @@
+name prog3;
+body
+data integer16_t _aaaaaaaaaaaaaaa, _aaaaaaaaaaaaaa2, _bbbbbbbbbbbbbbb, _xxxxxxxxxxxxxxx, _cccccccccccccc1, _cccccccccccccc2;
+read _aaaaaaaaaaaaaaa;
+read _bbbbbbbbbbbbbbb;
+for _aaaaaaaaaaaaaa2<==_aaaaaaaaaaaaaaa to _bbbbbbbbbbbbbbb do
+    write _aaaaaaaaaaaaaa2 * _aaaaaaaaaaaaaa2;
+
+for _aaaaaaaaaaaaaa2<==_bbbbbbbbbbbbbbb to _aaaaaaaaaaaaaaa do
+    write _aaaaaaaaaaaaaa2 * _aaaaaaaaaaaaaa2;
+
+_xxxxxxxxxxxxxxx<==0;
+_cccccccccccccc1<==0;
+while _cccccccccccccc1 le _aaaaaaaaaaaaaaa 
+body
+    _cccccccccccccc2<==0;
+    while _cccccccccccccc2 le _bbbbbbbbbbbbbbb
+    body    
+        _xxxxxxxxxxxxxxx<==_xxxxxxxxxxxxxxx add 1;
+        _cccccccccccccc2<==_cccccccccccccc2 add 1;
+    end
+    end while
+    _cccccccccccccc1<==_cccccccccccccc1 add 1;
+end    
+end while
+write _xxxxxxxxxxxxxxx;
+
+_xxxxxxxxxxxxxxx<==0;
+_cccccccccccccc1<==1;
+repeat
+body
+    _cccccccccccccc2<==1;
+    repeat
+    body
+        _xxxxxxxxxxxxxxx<==_xxxxxxxxxxxxxxx add 1;
+        _cccccccccccccc2<==_cccccccccccccc2 add 1;
+    end
+    until ! (_cccccccccccccc2 ge _bbbbbbbbbbbbbbb)
+    _cccccccccccccc1<==_cccccccccccccc1 add 1;
+end
+until ! (_cccccccccccccc1 ge _aaaaaaaaaaaaaaa)
+write _xxxxxxxxxxxxxxx;
+
+end

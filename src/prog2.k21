@@ -1,0 +1,55 @@
+name prog2;
+body
+data integer16_t _aaaaaaaaaaaaaaa, _bbbbbbbbbbbbbbb, _ccccccccccccccc;
+read _aaaaaaaaaaaaaaa;
+read _bbbbbbbbbbbbbbb;
+read _ccccccccccccccc;
+if(_aaaaaaaaaaaaaaa ge _bbbbbbbbbbbbbbb)
+body
+    if(_aaaaaaaaaaaaaaa ge _ccccccccccccccc)
+    body
+        goto abigger;		
+    end
+    else
+    body
+        write _ccccccccccccccc;
+        goto outofif;
+        abigger:		
+        write _aaaaaaaaaaaaaaa;
+        goto outofif;
+    end
+end	
+if(_bbbbbbbbbbbbbbb le _ccccccccccccccc)
+body
+    write _ccccccccccccccc;
+end	
+else
+body
+    write _bbbbbbbbbbbbbbb;
+end
+outofif:	
+if((_aaaaaaaaaaaaaaa == _bbbbbbbbbbbbbbb) & (_aaaaaaaaaaaaaaa == _ccccccccccccccc) & (_bbbbbbbbbbbbbbb == _ccccccccccccccc))
+body
+    write 1;
+end	
+else
+body
+    write 0;
+end
+if((_aaaaaaaaaaaaaaa le 0) | (_bbbbbbbbbbbbbbb le 0) | (_ccccccccccccccc le 0))
+body
+    write (1);
+end	
+else
+body
+    write 0;
+end
+if(! (_aaaaaaaaaaaaaaa le (_bbbbbbbbbbbbbbb add _ccccccccccccccc)))
+body
+    write(10);
+end	
+else
+body
+    write(0);
+end
+end

@@ -1,0 +1,16 @@
+name prog1;
+body
+data integer16_t _aaaaaaaaaaaaaaa, _bbbbbbbbbbbbbbb, _xxxxxxxxxxxxxxx, _yyyyyyyyyyyyyyy;
+read _aaaaaaaaaaaaaaa;
+read _bbbbbbbbbbbbbbb;
+write _aaaaaaaaaaaaaaa add _bbbbbbbbbbbbbbb ;
+write _aaaaaaaaaaaaaaa sub _bbbbbbbbbbbbbbb ;
+write _aaaaaaaaaaaaaaa * _bbbbbbbbbbbbbbb ;
+write _aaaaaaaaaaaaaaa / _bbbbbbbbbbbbbbb ;
+write _aaaaaaaaaaaaaaa % _bbbbbbbbbbbbbbb ;
+
+_xxxxxxxxxxxxxxx<==(_aaaaaaaaaaaaaaa sub _bbbbbbbbbbbbbbb ) * 10 add (_aaaaaaaaaaaaaaa add _bbbbbbbbbbbbbbb ) / 10;
+_yyyyyyyyyyyyyyy<==_xxxxxxxxxxxxxxx  add (_xxxxxxxxxxxxxxx % 10);
+write _xxxxxxxxxxxxxxx;
+write _yyyyyyyyyyyyyyy;
+end
